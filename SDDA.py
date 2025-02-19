@@ -18,7 +18,7 @@ import torch.optim as optim
 import pandas as pd
 from utils.network import backbone_net
 from utils.LogRecord import LogRecord
-from utils.dataloader import read_mi_combine_tar, read_mi_combine_tar_diff, read_mi_combine_tar_ldk_avg, read_mi_combine_tar_ldk_pearson_avg
+from utils.dataloader import read_mi_combine_tar, read_mi_combine_tar_diff
 from utils.utils_1 import lr_scheduler_full, fix_random_seed, cal_acc_comb, data_loader, cal_auc_comb
 from utils.loss import ClassConfusionLoss
 from utils.loss import MultipleKernelMaximumMeanDiscrepancy, GaussianKernel
@@ -31,8 +31,8 @@ import sys
 import math
 
 def train_target(args):
-    X_1, y_1, num_subjects_1, paradigm_1, sample_rate_1, ch_num_1 = data_process(args.data1)  # (1296, 22, 1001)
-    X_2, y_2, num_subjects_2, paradigm_2, sample_rate_2, ch_num_2 = data_process(args.data2)  # (6520, 3, 1126)
+    X_1, y_1, num_subjects_1, paradigm_1, sample_rate_1, ch_num_1 = data_process(args.data1)  # (N, C, T)
+    X_2, y_2, num_subjects_2, paradigm_2, sample_rate_2, ch_num_2 = data_process(args.data2)  # (N2, C2, T2)
 
     if args.align:
         print("-------   START EA: -------")
@@ -44,11 +44,7 @@ def train_target(args):
     '''
     teacher
     '''
-    args.chn = 22
-    args.feature_deep_dim = 248
     netF, netC = backbone_net(args, return_type='xy')
-    # args.feature_deep_dim = 4960
-    # netF, netC = backbone_net(args, return_type='xy')
     if args.data_env != 'local':
         netF, netC = netF.cuda(), netC.cuda()
     base_network = nn.Sequential(netF, netC)
@@ -58,7 +54,6 @@ def train_target(args):
     '''
     student
     '''
-    args.chn = 3
     netFF, netCC = backbone_net(args, return_type='xy')
     if args.data_env != 'local':
         netFF, netCC = netFF.cuda(), netCC.cuda()
@@ -94,7 +89,6 @@ def train_target(args):
         test_y = y_2[start:end]
     else:
         raise ValueError("Invalid idt value: must be between certain range.")
-    print('train_x, train_y, test_x, test_y.shape', train_x.shape, train_y.shape, test_x.shape, test_y.shape)
     dset_loaders2 = data_loader(train_x, train_y, test_x, test_y, args)
 
     while iter_num < max_iter:
@@ -218,16 +212,6 @@ if __name__ == '__main__':
 
     # whether to use EA
     args.align = True
-
-    # learning rate
-    args.lr = 0.001
-    print(f"{args.lr:.5f}")
-
-    # train batch size
-    args.batch_size = 32
-
-    # training epochs
-    args.max_epoch = 100
 
     # GPU device id
     try:
