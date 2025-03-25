@@ -2,9 +2,7 @@ import torch as tr
 import os.path as osp
 from datetime import datetime
 from datetime import timedelta, timezone
-
 from tl.utils.utils_1 import create_folder
-
 
 class LogRecord:
     def __init__(self, args):
