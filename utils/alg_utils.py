@@ -1,9 +1,7 @@
 import numpy as np
 import torch
 import torch.nn.functional as F
-
 from scipy.linalg import fractional_matrix_power
-
 
 def EA(x):
     """
