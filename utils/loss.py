@@ -5,9 +5,7 @@ import math
 import torch.nn.functional as F
 from torch.autograd import Function
 from typing import Optional, Sequence
-
 import torch
-
 
 def Entropy(input_):
     epsilon = 1e-5
@@ -84,7 +82,6 @@ class CELabelSmooth_raw(nn.Module):
         else:
             return loss
 
-
 class KnowledgeDistillationLoss(nn.Module):
     def __init__(self, reduction='mean', alpha=-1.):
         super().__init__()
@@ -139,7 +136,6 @@ class ConsistencyLoss(nn.Module):
         return (F.kl_div(pred1, m.detach(), reduction='batchmean') + F.kl_div(pred2, m.detach(),
                                                                               reduction='batchmean')) / 2
 
-
 class source_inconsistency_loss(nn.Module):
     # source models inconsistency loss.
     def __init__(self, th_max=0.1):
@@ -148,8 +144,6 @@ class source_inconsistency_loss(nn.Module):
     def forward(self, prob):  # [4, 8, 4]
         si_std = tr.std(prob, dim=1).mean(dim=1).mean(dim=0)
         return si_std
-
-
 
 class InformationMaximizationLoss(nn.Module):
     """
@@ -167,8 +161,6 @@ class InformationMaximizationLoss(nn.Module):
         im_loss = ins_entropy_loss - class_entropy_loss
 
         return im_loss
-
-
 
 # =============================================================DAN Function=============================================
 class MultipleKernelMaximumMeanDiscrepancy(nn.Module):
@@ -199,7 +191,6 @@ class MultipleKernelMaximumMeanDiscrepancy(nn.Module):
         loss = (kernel_matrix * self.index_matrix).sum() + 2. / float(batch_size - 1)
 
         return loss
-
 
 def _update_index_matrix(batch_size: int, index_matrix: Optional[tr.Tensor] = None,
                          linear: Optional[bool] = True) -> tr.Tensor:
@@ -298,13 +289,11 @@ def CDANE(input_list, ad_net, random_layer, entropy=None, coeff=None, args=None)
     else:
         return nn.BCELoss()(ad_out, dc_target)
 
-
 def grl_hook(coeff):
     def fun1(grad):
         return -coeff * grad.clone()
 
     return fun1
-
 
 class ReverseLayerF(Function):
 
@@ -389,7 +378,6 @@ def lmmd(source, target, s_label, t_label, class_num, kernel_mul=2.0, kernel_num
     loss = loss / batch_size  # calculate the mean value or not
     return loss
 
-
 def guassian_kernel(source, target, kernel_mul=2.0, kernel_num=5, fix_sigma=None):
     n_samples = int(source.size()[0])+int(target.size()[0])
     total = tr.cat([source, target], dim=0)
@@ -455,8 +443,6 @@ def cal_weight(s_label, t_label, class_num=None):
         weight_tt = np.array([0])
         weight_st = np.array([0])
     return weight_ss.astype('float32'), weight_tt.astype('float32'), weight_st.astype('float32')
-
-
 
 
 # =============================================================JAN Function=============================================
