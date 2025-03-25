@@ -131,9 +131,6 @@ def data_process(dataset):
     print('data shape:', X.shape, ' labels shape:', y.shape)
     return X, y, num_subjects, paradigm, sample_rate, ch_num
 
-
-
-
 def data_normalize(fea_de, norm_type):
     if norm_type == 'zscore':
         zscore = preprocessing.StandardScaler()
