@@ -6,8 +6,6 @@ import torch.nn.utils.weight_norm as weightNorm
 from tl.models.EEGNet import EEGNet_feature, EEGNet
 from tl.models.FC import FC, FC_xy, FC_diff
 
-
-
 def backbone_net(args, return_type='y'):
     netF = EEGNet_feature(n_classes=args.class_num,
                         Chans=args.chn,
@@ -24,16 +22,11 @@ def backbone_net(args, return_type='y'):
         netC = FC(args.feature_deep_dim, args.class_num)
     elif return_type == 'xy':
         netC = FC_xy(args.feature_deep_dim, args.class_num)
-    elif return_type == '001xy':
-        print("Hi! it's 001xy!")
-        netC = FC_xy(args.feature_deep_dim, args.class_num)
     return netF, netC
-
 
 # dynamic change the weight of the domain-discriminator
 def calc_coeff(iter_num, alpha=10.0, max_iter=10000.0):
     return float(2.0 / (1.0 + np.exp(-alpha * iter_num / max_iter)) - 1)
-
 
 def init_weights(m):
     classname = m.__class__.__name__
@@ -44,10 +37,6 @@ def init_weights(m):
         nn.init.xavier_normal_(m.weight)
         nn.init.zeros_(m.bias)
 
-
-
-
-
 class scalar(nn.Module):
     def __init__(self, init_weights):
         super(scalar, self).__init__()
@@ -57,7 +46,6 @@ class scalar(nn.Module):
         x = self.w * tr.ones((x.shape[0]), 1).cuda()
         x = tr.sigmoid(x)
         return x
-
 
 def grl_hook(coeff):
     def fun1(grad):
