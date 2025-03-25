@@ -18,12 +18,10 @@ from moabb.datasets import BNCI2014001, BNCI2014002, BNCI2014008, BNCI2014009, B
     BNCI2014004, BNCI2015001
 from moabb.paradigms import MotorImagery, P300
 
-
 def split_data(data, axis, times):
     # Splitting data into multiple sections. data: (trials, channels, time_samples)
     data_split = np.split(data, indices_or_sections=times, axis=axis)
     return data_split
-
 
 def dataset_to_file(dataset_name, data_save):
     moabb.set_log_level("ERROR")
@@ -96,19 +94,16 @@ def dataset_to_file(dataset_name, data_save):
             X, labels, meta = paradigm.get_data(dataset=dataset, subjects=dataset.subject_list[:], return_epochs=True)
             return X.info
 
-
 def op_copy(optimizer):
     for param_group in optimizer.param_groups:
         param_group['lr0'] = param_group['lr']
     return optimizer
-
 
 def fix_random_seed(SEED):
     tr.manual_seed(SEED)
     tr.cuda.manual_seed(SEED)
     np.random.seed(SEED)
     random.seed(SEED)
-
 
 def create_folder(dir_name, data_env, win_root):
     if not osp.exists(dir_name):
@@ -118,7 +113,6 @@ def create_folder(dir_name, data_env, win_root):
             os.mkdir(dir_name)
         elif data_env == 'local':
             os.makedirs(win_root + dir_name)
-
 
 def lr_scheduler(optimizer, iter_num, max_iter, gamma=10, power=0.75):
     decay = (1 + gamma * iter_num / max_iter) ** (-power)
