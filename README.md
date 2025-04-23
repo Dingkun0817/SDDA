@@ -24,7 +24,7 @@ To our knowledge, this is the first work to use knowledge distillation in cross-
 
    For more detailed information about the datasets (e.g., experimental paradigms, subjects, sessions), please visit:
    
-   [More details of the BNCI Datasets](http://www.bnci-horizon-2020.eu/database/data-sets)
+   [More details of the BNCI Datasets](https://neurotechx.github.io/moabb/datasets.html)
 
 ## Setup
 
