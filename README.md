@@ -1,7 +1,6 @@
 # Spatial Distillation based Distribution Alignment (SDDA) for Cross-Headset EEG Classification
 This repository contains the original Python code for our paper [Spatial Distillation based Distribution Alignment (SDDA) for Cross-Headset EEG Classification](https://arxiv.org/pdf/2503.05349).
 
-![SDDA_approach](https://github.com/Dingkun0817/SDDA/blob/main/SDDA_approach.jpg)
 
 # Overview
 A non-invasive brain-computer interface (BCI) enables direct interaction between the user and external devices, typically via electroencephalogram (EEG) signals. However, decoding EEG signals across different headsets remains a significant challenge due to differences in the number and locations of the electrodes. 
