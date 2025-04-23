@@ -18,6 +18,15 @@ To our knowledge, this is the first work to use knowledge distillation in cross-
 # Proposed SDDA Framework
 ![SDDA_approach](https://github.com/Dingkun0817/SDDA/blob/main/SDDA_approach.jpg)
 
+## Datasets 
+   To download the BNCI public datasets, please follow the link below to access the preprocessed datasets.
+
+   [Download BNCI Public Datasets](http://www.bnci-horizon-2020.eu/database/data-sets)
+
+   For more detailed information about the datasets (e.g., experimental paradigms, subjects, sessions), please visit:
+   
+   [More details of the BNCI Datasets](http://www.bnci-horizon-2020.eu/database/data-sets)
+
 ## Citation
 
 If you find this work useful, please consider citing our paper:
