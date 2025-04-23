@@ -15,3 +15,21 @@ To our knowledge, this is the first work to use knowledge distillation in cross-
 - We introduce a distribution alignment (DA) strategy that aligns the source and target domains comprehensively in multiple stages of the model, i.e., input/feature/output spaces. Unlike previous approaches that rely on single-stage alignment, the proposed DA more effectively bridges the domain gaps, ensuring robust transfer.
 - Extensive experiments on multiple EEG datasets, covering both motor imagery (MI) and P300 paradigms, validated the superior performance of SDDA, which consistently outperformed state-of-the-art homogeneous transfer learning approaches in both offline and online calibration scenarios.
 
+# Proposed SDDA Framework
+![SDDA_approach](https://github.com/Dingkun0817/SDDA/blob/main/SDDA_approach.jpg)
+
+## Citation
+
+If you find this work useful, please consider citing our paper:
+
+```bibtex
+@article{liu2025spatial,
+  title={Spatial distillation based distribution alignment (SDDA) for cross-headset EEG classification},
+  author={Liu, Dingkun and Li, Siyang and Wang, Ziwei and Li, Wei and Wu, Dongrui},
+  journal={arXiv preprint arXiv:2503.05349},
+  year={2025}
+}
+```
+
+## Contact
+For any questions or collaborations, please feel free to reach out via d202481536@hust.edu.cn or open an issue in this repository.
