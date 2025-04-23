@@ -34,7 +34,6 @@ This code has been tested with `Python 3.10` and `3.11`.
 
 `pip install -r requirements.txt`
 
-
 ## Baselines
 
 In this paper, I have implemented some deep transfer methods as follows:
@@ -48,7 +47,6 @@ In this paper, I have implemented some deep transfer methods as follows:
 * [ISFDA](https://dl.acm.org/doi/abs/10.1145/3474085.3475487): Imbalanced Source-free Domain Adaptation (ACM MM2021)
 
 If you wanna know the implement of the baselines, go [here](https://github.com/sylyoung/DeepTransferEEG)
-
 
 ## Citation
 
