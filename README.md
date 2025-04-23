@@ -27,6 +27,15 @@ To our knowledge, this is the first work to use knowledge distillation in cross-
    
    [More details of the BNCI Datasets](http://www.bnci-horizon-2020.eu/database/data-sets)
 
+## Setup
+
+_Instructions refer to Unix-based systems (e.g. Linux, MacOS)._
+
+This code has been tested with `Python 3.10` and `3.11`.
+
+`pip install -r requirements.txt`
+
+
 ## Citation
 
 If you find this work useful, please consider citing our paper:
