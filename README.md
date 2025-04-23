@@ -38,7 +38,7 @@ This code has been tested with `Python 3.10` and `3.11`.
 ## Baselines
 
 In this paper, I have implemented some deep transfer methods as follows:
-* DAN: Learning Transferable Features with Deep Adaptation Networks (ICML2015)
+* [DAN](https://proceedings.mlr.press/v37/long15): Learning Transferable Features with Deep Adaptation Networks (ICML2015)
 
 If you just want to know the implement of the baselines, go [here](https://github.com/sylyoung/DeepTransferEEG)
 
