@@ -35,6 +35,14 @@ This code has been tested with `Python 3.10` and `3.11`.
 `pip install -r requirements.txt`
 
 
+## Baselines
+
+In this paper, I have implemented some deep transfer methods as follows:
+* DAN: Learning Transferable Features with Deep Adaptation Networks (ICML2015)
+
+If you just want to know the implement of the baselines, go [here](https://github.com/sylyoung/DeepTransferEEG)
+
+
 ## Citation
 
 If you find this work useful, please consider citing our paper:
