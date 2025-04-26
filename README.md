@@ -1,5 +1,5 @@
 # Spatial Distillation based Distribution Alignment (SDDA) for Cross-Headset EEG Classification
-### ✨ This repository contains the original Python code for our paper [Spatial Distillation based Distribution Alignment (SDDA) for Cross-Headset EEG Classification](https://arxiv.org/pdf/2503.05349).
+### ✨ This repository contains the original Python (PyTorch) code for our paper [Spatial Distillation based Distribution Alignment (SDDA) for Cross-Headset EEG Classification](https://arxiv.org/pdf/2503.05349).
 
 
 # Overview
