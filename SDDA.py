@@ -144,7 +144,7 @@ def train_target(args):
             return nn.KLDivLoss()(F.log_softmax(y / temp, dim=1), F.softmax(teacher_scores / temp, dim=1)) * (
                     temp * temp * 2.0 * alpha)
 
-        ditillation_loss = distillation(outputs_source, labels_source, outputs_source_teacher, temp=8, alpha=0.5)
+        ditillation_loss = distillation(outputs_source, labels_source, outputs_source_teacher, temp=2, alpha=0.5)
 
         '''
         Confusion Loss
