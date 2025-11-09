@@ -66,4 +66,4 @@ If you find this work useful, please consider citing our paper:
 ```
 
 ## Contact
-For any questions or collaborations, please feel free to reach out via d202481536@hust.edu.cn or open an issue in this repository.
+For any questions or collaborations, please feel free to reach out via liudingkun@hust.edu.cn or open an issue in this repository.
