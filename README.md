@@ -1,5 +1,5 @@
 ## :speech_balloon: Annoucement
-- [2025.11.09] 🚩 **News:**  This paper is accepted by IEEE Transactions on Biomedical Engineering🎉🎉🎉. Our paper can be found in [SDDA: Spatial Distillation based Distribution Alignment for Cross-Headset EEG Classification](https://ieeexplore.ieee.org/document/11240110).
+- [2025.11.09] 🚩 **News:**  This paper is accepted by **IEEE Transactions on Biomedical Engineering (TBME)**🎉🎉🎉. Our paper can be found in [SDDA: Spatial Distillation based Distribution Alignment for Cross-Headset EEG Classification](https://ieeexplore.ieee.org/document/11240110).
 
 - [2025.03.26] 🚩 **News**  The manuscript of SDDA can be found in [Spatial Distillation based Distribution Alignment (SDDA) for Cross-Headset EEG Classification](https://arxiv.org/pdf/2503.05349).
 
