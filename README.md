@@ -60,8 +60,10 @@ If you find this work useful, please consider citing our paper:
 @article{liu2025spatial,
   title={Spatial distillation based distribution alignment (SDDA) for cross-headset EEG classification},
   author={Liu, Dingkun and Li, Siyang and Wang, Ziwei and Li, Wei and Wu, Dongrui},
-  journal={arXiv preprint arXiv:2503.05349},
-  year={2025}
+  journal={IEEE Transactions on Biomedical Engineering},
+  pages={1--12},
+  year={2025},
+  publisher={IEEE}
 }
 ```
 
